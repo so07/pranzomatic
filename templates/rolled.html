@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+<h4>Selected tablemates</h4>
+
+{% for t in tablemates %}
+
+ <div class="chip">
+    <img src="/img/fork-and-knife.png">
+    {{t | capitalize}}
+ </div>
+
+{% endfor %}
+
+<br><br><br>
+
+And the winner is ... <b>{{winner}}</b>!
+
+{% include 'footer.html' %}

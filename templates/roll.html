@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+
+
+    <form name='roll_form' action='/rolled' method='POST'>
+    {% for t in tablemates %}
+
+
+        {% set checked = "" %}
+        {%- if tablemates[t] == True -%}
+            {% set checked = "checked='checked'" %}
+        {%- endif %}
+
+        <input type='checkbox' class='mycheckbox' id='{{t}}' name='{{t}}' {{checked}}>
+        <label style='font-size:1.5em;' for='{{t}}'>{{t | capitalize}}</label>
+        <br>
+
+    {% endfor %}
+
+    <br>
+    <input type='password' id='@password' name='@password'>
+    <label for='@password'>Password</label>
+    <br>
+    <br>
+    <input  type='submit' id='@roll' name='@roll' class='btn' value='Let&apos;s Roll'>
+
+</form>
+
+
+{% include 'footer.html' %}
